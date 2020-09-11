@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "A New Blog!"
+categories: jekyll update
+---
+
+Hello there! There is my new blog and hopefully my new personal website. I wanted to go with this format because I have a few different topics I want to write about and keep track of. I don't have a writing cadence at the moment, but I'm picturing a new post every day or so, at least until I run out of ideas. 
+
+I have a few ideas at the moment including:
+- Setting up this blog
+- My experience with Jekyll as someone who hasn't used Ruby
+- How I learned to cook
+- Setting up a DigitalOcean Droplet + learning some of the ins and outs of managing a server
+
+I'm sure there'll be more, but for now I've gotta make sure I can make this page go live!
