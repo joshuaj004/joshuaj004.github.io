@@ -1,4 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-14T13:16:45-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Josh Johnson’s Personal Site</title><subtitle>A blog/personal site to write stuff about computers, languages (human and robot), traveling, food, and whatever else I happen to find interesting at the moment.</subtitle><entry><title type="html">Exploring Freelancer Gigs</title><link href="http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs.html" rel="alternate" type="text/html" title="Exploring Freelancer Gigs" /><published>2020-09-14T09:09:00-04:00</published><updated>2020-09-14T09:09:00-04:00</updated><id>http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs</id><content type="html" xml:base="http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs.html">&lt;p&gt;I’ve done a few more days of the Linux Upskill Challenge and read through the getting started tutorial for FastAPI so I’m feeling pretty good at the moment. I think my next step with FastAPI is to use the &lt;a href=&quot;https://github.com/tiangolo/full-stack-fastapi-postgresql&quot;&gt;Full Stack FastAPI and PostgreSQL project generator&lt;/a&gt; and try to play around with that. On a previous personal project, I sort of got stuck with the user creation and authentication phase so having the skeleton should be helpful for moving past that.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-15T06:27:48-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Josh Johnson’s Personal Site</title><subtitle>A blog/personal site to write stuff about computers, languages (human and robot), traveling, food, and whatever else I happen to find interesting at the moment.</subtitle><entry><title type="html">Understanding the FastAPI Cookiecutter Template</title><link href="http://localhost:4000/fastapi/cookiecutter/2020/09/15/understanding-the-fastapi-template.html" rel="alternate" type="text/html" title="Understanding the FastAPI Cookiecutter Template" /><published>2020-09-15T02:26:00-04:00</published><updated>2020-09-15T02:26:00-04:00</updated><id>http://localhost:4000/fastapi/cookiecutter/2020/09/15/understanding-the-fastapi-template</id><content type="html" xml:base="http://localhost:4000/fastapi/cookiecutter/2020/09/15/understanding-the-fastapi-template.html">&lt;p&gt;In continuing to use FastAPI and setting up the &lt;a href=&quot;https://github.com/tiangolo/full-stack-fastapi-postgresql&quot;&gt;Full Stack FastAPI and PostgreSQL project generator&lt;/a&gt;, and honestly the output is a little bit intimidating.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;josh@josh ~/firstfastapi&amp;gt; tree
+.
+├── backend
+│   ├── app
+│   │   ├── alembic
+│   │   │   ├── env.py
+│   │   │   ├── __pycache__
+│   │   │   │   └── env.cpython-37.pyc
+│   │   │   ├── README
+│   │   │   ├── script.py.mako
+│   │   │   └── versions
+│   │   │       ├── d4867f3a4c0a_first_revision.py
+│   │   │       └── __pycache__
+│   │   │           └── d4867f3a4c0a_first_revision.cpython-37.pyc
+│   │   ├── alembic.ini
+│   │   ├── app
+│   │   │   ├── api
+│   │   │   │   ├── api_v1
+│   │   │   │   │   ├── api.py
+│   │   │   │   │   ├── endpoints
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── items.py
+│   │   │   │   │   │   ├── login.py
+│   │   │   │   │   │   ├── __pycache__
+│   │   │   │   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   │   │   │   ├── items.cpython-37.pyc
+│   │   │   │   │   │   │   ├── login.cpython-37.pyc
+│   │   │   │   │   │   │   ├── users.cpython-37.pyc
+│   │   │   │   │   │   │   └── utils.cpython-37.pyc
+│   │   │   │   │   │   ├── users.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── __pycache__
+│   │   │   │   │       ├── api.cpython-37.pyc
+│   │   │   │   │       └── __init__.cpython-37.pyc
+│   │   │   │   ├── deps.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       ├── deps.cpython-37.pyc
+│   │   │   │       └── __init__.cpython-37.pyc
+│   │   │   ├── backend_pre_start.py
+│   │   │   ├── celeryworker_pre_start.py
+│   │   │   ├── core
+│   │   │   │   ├── celery_app.py
+│   │   │   │   ├── config.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── celery_app.cpython-37.pyc
+│   │   │   │   │   ├── config.cpython-37.pyc
+│   │   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   │   └── security.cpython-37.pyc
+│   │   │   │   └── security.py
+│   │   │   ├── crud
+│   │   │   │   ├── base.py
+│   │   │   │   ├── crud_item.py
+│   │   │   │   ├── crud_user.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── __pycache__
+│   │   │   │       ├── base.cpython-37.pyc
+│   │   │   │       ├── crud_item.cpython-37.pyc
+│   │   │   │       ├── crud_user.cpython-37.pyc
+│   │   │   │       └── __init__.cpython-37.pyc
+│   │   │   ├── db
+│   │   │   │   ├── base_class.py
+│   │   │   │   ├── base.py
+│   │   │   │   ├── init_db.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── base_class.cpython-37.pyc
+│   │   │   │   │   ├── base.cpython-37.pyc
+│   │   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   │   ├── init_db.cpython-37.pyc
+│   │   │   │   │   └── session.cpython-37.pyc
+│   │   │   │   └── session.py
+│   │   │   ├── email-templates
+│   │   │   │   ├── build
+│   │   │   │   │   ├── new_account.html
+│   │   │   │   │   ├── reset_password.html
+│   │   │   │   │   └── test_email.html
+│   │   │   │   └── src
+│   │   │   │       ├── new_account.mjml
+│   │   │   │       ├── reset_password.mjml
+│   │   │   │       └── test_email.mjml
+│   │   │   ├── initial_data.py
+│   │   │   ├── __init__.py
+│   │   │   ├── main.py
+│   │   │   ├── models
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── item.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   │   ├── item.cpython-37.pyc
+│   │   │   │   │   └── user.cpython-37.pyc
+│   │   │   │   └── user.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   ├── main.cpython-37.pyc
+│   │   │   │   ├── utils.cpython-37.pyc
+│   │   │   │   └── worker.cpython-37.pyc
+│   │   │   ├── schemas
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── item.py
+│   │   │   │   ├── msg.py
+│   │   │   │   ├── __pycache__
+│   │   │   │   │   ├── __init__.cpython-37.pyc
+│   │   │   │   │   ├── item.cpython-37.pyc
+│   │   │   │   │   ├── msg.cpython-37.pyc
+│   │   │   │   │   ├── token.cpython-37.pyc
+│   │   │   │   │   └── user.cpython-37.pyc
+│   │   │   │   ├── token.py
+│   │   │   │   └── user.py
+│   │   │   ├── tests
+│   │   │   │   ├── api
+│   │   │   │   │   ├── api_v1
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── test_celery.py
+│   │   │   │   │   │   ├── test_items.py
+│   │   │   │   │   │   ├── test_login.py
+│   │   │   │   │   │   └── test_users.py
+│   │   │   │   │   └── __init__.py
+│   │   │   │   ├── conftest.py
+│   │   │   │   ├── crud
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── test_item.py
+│   │   │   │   │   └── test_user.py
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── utils
+│   │   │   │       ├── __init__.py
+│   │   │   │       ├── item.py
+│   │   │   │       ├── user.py
+│   │   │   │       └── utils.py
+│   │   │   ├── tests_pre_start.py
+│   │   │   ├── utils.py
+│   │   │   └── worker.py
+│   │   ├── mypy.ini
+│   │   ├── prestart.sh
+│   │   ├── pyproject.toml
+│   │   ├── scripts
+│   │   │   ├── format-imports.sh
+│   │   │   ├── format.sh
+│   │   │   ├── lint.sh
+│   │   │   ├── test-cov-html.sh
+│   │   │   └── test.sh
+│   │   ├── tests-start.sh
+│   │   └── worker-start.sh
+│   ├── backend.dockerfile
+│   └── celeryworker.dockerfile
+├── cookiecutter-config-file.yml
+├── docker-compose.override.yml
+├── docker-compose.yml
+├── frontend
+│   ├── babel.config.js
+│   ├── Dockerfile
+│   ├── nginx-backend-not-found.conf
+│   ├── package.json
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── img
+│   │   │   └── icons
+│   │   │       ├── android-chrome-192x192.png
+│   │   │       ├── android-chrome-512x512.png
+│   │   │       ├── apple-touch-icon-120x120.png
+│   │   │       ├── apple-touch-icon-152x152.png
+│   │   │       ├── apple-touch-icon-180x180.png
+│   │   │       ├── apple-touch-icon-60x60.png
+│   │   │       ├── apple-touch-icon-76x76.png
+│   │   │       ├── apple-touch-icon.png
+│   │   │       ├── favicon-16x16.png
+│   │   │       ├── favicon-32x32.png
+│   │   │       ├── msapplication-icon-144x144.png
+│   │   │       ├── mstile-150x150.png
+│   │   │       └── safari-pinned-tab.svg
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── README.md
+│   ├── src
+│   │   ├── api.ts
+│   │   ├── App.vue
+│   │   ├── assets
+│   │   │   └── logo.png
+│   │   ├── component-hooks.ts
+│   │   ├── components
+│   │   │   ├── NotificationsManager.vue
+│   │   │   ├── RouterComponent.vue
+│   │   │   └── UploadButton.vue
+│   │   ├── env.ts
+│   │   ├── interfaces
+│   │   │   └── index.ts
+│   │   ├── main.ts
+│   │   ├── plugins
+│   │   │   ├── vee-validate.ts
+│   │   │   └── vuetify.ts
+│   │   ├── registerServiceWorker.ts
+│   │   ├── router.ts
+│   │   ├── shims-tsx.d.ts
+│   │   ├── shims-vue.d.ts
+│   │   ├── store
+│   │   │   ├── admin
+│   │   │   │   ├── actions.ts
+│   │   │   │   ├── getters.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── mutations.ts
+│   │   │   │   └── state.ts
+│   │   │   ├── index.ts
+│   │   │   ├── main
+│   │   │   │   ├── actions.ts
+│   │   │   │   ├── getters.ts
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── mutations.ts
+│   │   │   │   └── state.ts
+│   │   │   └── state.ts
+│   │   ├── utils.ts
+│   │   └── views
+│   │       ├── Login.vue
+│   │       ├── main
+│   │       │   ├── admin
+│   │       │   │   ├── AdminUsers.vue
+│   │       │   │   ├── Admin.vue
+│   │       │   │   ├── CreateUser.vue
+│   │       │   │   └── EditUser.vue
+│   │       │   ├── Dashboard.vue
+│   │       │   ├── Main.vue
+│   │       │   ├── profile
+│   │       │   │   ├── UserProfileEditPassword.vue
+│   │       │   │   ├── UserProfileEdit.vue
+│   │       │   │   └── UserProfile.vue
+│   │       │   └── Start.vue
+│   │       ├── PasswordRecovery.vue
+│   │       └── ResetPassword.vue
+│   ├── tests
+│   │   └── unit
+│   │       └── upload-button.spec.ts
+│   ├── tsconfig.json
+│   ├── tslint.json
+│   └── vue.config.js
+├── README.md
+└── scripts
+    ├── build-push.sh
+    ├── build.sh
+    ├── deploy.sh
+    ├── test-local.sh
+    └── test.sh
+
+52 directories, 189 files
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Yupppp it’s almost 250 &lt;em&gt;things&lt;/em&gt; and I’m supposed to know what each one of them does. Okay, but really it’s not that bad if we look a bit closer.&lt;/p&gt;
+
+&lt;p&gt;For reference, here are the different sections and the number of files + dirs in each:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Section&lt;/th&gt;
+      &lt;th&gt;Approx. # of files + dirs&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Backend&lt;/td&gt;
+      &lt;td&gt;145&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Frontend&lt;/td&gt;
+      &lt;td&gt;86&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Rest (Including dockerfiles, ymls, and scripts)&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;backend-fluff&quot;&gt;Backend Fluff&lt;/h1&gt;
+
+&lt;p&gt;For starters, any of the pycache dirs and their contents can be ignored. This accounts for almost 50 items (11 dirs, 36 files) so right off the bat almost 20% of this whole project is just noise and it would be nice to hide. I’m using VSCode, so this &lt;a href=&quot;https://stackoverflow.com/questions/30140112/how-do-i-hide-certain-files-from-the-sidebar-in-visual-studio-code&quot;&gt;stack overflow&lt;/a&gt; answer is very helpful. It was as simple as adding &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**/__pycache__/**&lt;/code&gt; to the files to exclude.&lt;/p&gt;
+
+&lt;p&gt;And then we have 14 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__init__.py&lt;/code&gt;’s which are empty or handle a couple imports, either way not so intimidating.&lt;/p&gt;
+
+&lt;p&gt;In our backend/app/app/email-templates folder, theres a few basic email templates, nothing crazy, accounting for 3 dirs and 6 files.&lt;/p&gt;
+
+&lt;p&gt;Then there’s various scripts and config files which handle stuff like test coverage and formatting.&lt;/p&gt;
+
+&lt;p&gt;Approx noise: 81/145&lt;/p&gt;
+
+&lt;h1 id=&quot;frontend-fluff&quot;&gt;Frontend Fluff&lt;/h1&gt;
+
+&lt;p&gt;18 images, icons, and favicon.
+6 json and js config files.
+3 plugins files.&lt;/p&gt;
+
+&lt;p&gt;Honestly, I’ve never used Vue before so I’m certain there are some files that I’ll late be able to identify as fluff, but right now we’ve got over 30% of the frontend files so good enough for me.&lt;/p&gt;
+
+&lt;p&gt;Approx noise: 27/86&lt;/p&gt;
+
+&lt;h1 id=&quot;rest&quot;&gt;Rest&lt;/h1&gt;
+&lt;p&gt;There’s only like 10 files look over them yourself :P&lt;/p&gt;
+
+&lt;p&gt;I haven’t even looked at the meat of this project yet, but I feel a lot better already. Once I have a good grasp on what is going on, I’ll probably put out a Part II of this for the backend and a Part III for the frontend.&lt;/p&gt;</content><author><name></name></author><category term="FastAPI" /><category term="Cookiecutter" /><summary type="html">In continuing to use FastAPI and setting up the Full Stack FastAPI and PostgreSQL project generator, and honestly the output is a little bit intimidating.</summary></entry><entry><title type="html">Exploring Freelancer Gigs</title><link href="http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs.html" rel="alternate" type="text/html" title="Exploring Freelancer Gigs" /><published>2020-09-14T09:09:00-04:00</published><updated>2020-09-14T09:09:00-04:00</updated><id>http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs</id><content type="html" xml:base="http://localhost:4000/daily-update/freelancer/2020/09/14/freelancer-gigs.html">&lt;p&gt;I’ve done a few more days of the Linux Upskill Challenge and read through the getting started tutorial for FastAPI so I’m feeling pretty good at the moment. I think my next step with FastAPI is to use the &lt;a href=&quot;https://github.com/tiangolo/full-stack-fastapi-postgresql&quot;&gt;Full Stack FastAPI and PostgreSQL project generator&lt;/a&gt; and try to play around with that. On a previous personal project, I sort of got stuck with the user creation and authentication phase so having the skeleton should be helpful for moving past that.&lt;/p&gt;
 
 &lt;p&gt;On another note, I’ve been toying around with the idea of getting some freelancing work. I’ve found &lt;a href=&quot;https://news.ycombinator.com/item?id=13209020&quot;&gt;this HackerNews comment&lt;/a&gt; from almost 4 years ago that should give me some places to start. After working remotely for the past several months, it’s gonna take a lot to get me to go back into an office. My current strategy will be to apply for some full time remote jobs and simultaneously register for a few of these freelancing sites. I’m not sure what the timeline for getting a project is, but I’ll write about it when I find out.&lt;/p&gt;</content><author><name></name></author><category term="daily-update" /><category term="freelancer" /><summary type="html">I’ve done a few more days of the Linux Upskill Challenge and read through the getting started tutorial for FastAPI so I’m feeling pretty good at the moment. I think my next step with FastAPI is to use the Full Stack FastAPI and PostgreSQL project generator and try to play around with that. On a previous personal project, I sort of got stuck with the user creation and authentication phase so having the skeleton should be helpful for moving past that.</summary></entry><entry><title type="html">Quick Update</title><link href="http://localhost:4000/daily-update/2020/09/13/quick-update.html" rel="alternate" type="text/html" title="Quick Update" /><published>2020-09-13T13:33:00-04:00</published><updated>2020-09-13T13:33:00-04:00</updated><id>http://localhost:4000/daily-update/2020/09/13/quick-update</id><content type="html" xml:base="http://localhost:4000/daily-update/2020/09/13/quick-update.html">&lt;p&gt;Today is kind of a slow day. I did some more of the Linux Upskill Challenge and I’ll probably be finished with it tomorrow. Additionally, I’ve been working through the &lt;a href=&quot;https://fastapi.tiangolo.com/tutorial/&quot;&gt;FastAPI tutorial&lt;/a&gt;. It’s quite thorough so it might take me another few days for the initial tutorial and then a little bit longer for the advanced tutorial. From the little I’ve done, I’m really liking it. In terms of setup, it’s about as easy to set up as Flask (very easy) and it comes with a lot of features out of the box including automatic docs. I’ve had to write Swagger docs previously and it’s not fun or interesting so getting them for free is nice. FastAPI also requires type hinting which should make it a lot easier to test because you &lt;em&gt;have&lt;/em&gt; to have the type hints. It’s also supposed to be really fast and performant, but this isn’t something I can say for sure/have tested yet. Maybe once I have something built, I’ll do some performance testing on it and see for sure. That’s all for now folks!&lt;/p&gt;</content><author><name></name></author><category term="daily-update" /><summary type="html">Today is kind of a slow day. I did some more of the Linux Upskill Challenge and I’ll probably be finished with it tomorrow. Additionally, I’ve been working through the FastAPI tutorial. It’s quite thorough so it might take me another few days for the initial tutorial and then a little bit longer for the advanced tutorial. From the little I’ve done, I’m really liking it. In terms of setup, it’s about as easy to set up as Flask (very easy) and it comes with a lot of features out of the box including automatic docs. I’ve had to write Swagger docs previously and it’s not fun or interesting so getting them for free is nice. FastAPI also requires type hinting which should make it a lot easier to test because you have to have the type hints. It’s also supposed to be really fast and performant, but this isn’t something I can say for sure/have tested yet. Maybe once I have something built, I’ll do some performance testing on it and see for sure. That’s all for now folks!</summary></entry><entry><title type="html">Visualizing Login Attempts</title><link href="http://localhost:4000/digital-ocean/login/cron/2020/09/12/visualizing-login-attemps.html" rel="alternate" type="text/html" title="Visualizing Login Attempts" /><published>2020-09-12T10:28:00-04:00</published><updated>2020-09-12T10:28:00-04:00</updated><id>http://localhost:4000/digital-ocean/login/cron/2020/09/12/visualizing-login-attemps</id><content type="html" xml:base="http://localhost:4000/digital-ocean/login/cron/2020/09/12/visualizing-login-attemps.html">&lt;p&gt;In my &lt;a href=&quot;/digital-ocean/login/2020/09/12/who's-knocking.html&quot;&gt;previous post&lt;/a&gt;, I created a simple script to figure out which countries had people trying to login to my server. I’d have to manually ssh in to my server, copy + paste this script, and then run it to see what I wanted to see. I decided I wanted to be able to check up on this from a web browser, so I went ahead and made that happen.&lt;/p&gt;
 
@@ -30,7 +331,8 @@
 
 &lt;p&gt;Nothing crazy, but it is far more convenient that it was before to see who is trying to log in.&lt;/p&gt;</content><author><name></name></author><category term="digital-ocean" /><category term="login" /><category term="cron" /><summary type="html">In my previous post, I created a simple script to figure out which countries had people trying to login to my server. I’d have to manually ssh in to my server, copy + paste this script, and then run it to see what I wanted to see. I decided I wanted to be able to check up on this from a web browser, so I went ahead and made that happen.</summary></entry><entry><title type="html">Who’s Knocking at my Door?</title><link href="http://localhost:4000/digital-ocean/login/2020/09/12/who's-knocking.html" rel="alternate" type="text/html" title="Who’s Knocking at my Door?" /><published>2020-09-12T00:00:00-04:00</published><updated>2020-09-12T00:00:00-04:00</updated><id>http://localhost:4000/digital-ocean/login/2020/09/12/who's-knocking</id><content type="html" xml:base="http://localhost:4000/digital-ocean/login/2020/09/12/who's-knocking.html">&lt;p&gt;As part of the Linux Up Skill Challenge, you set up your own server and expose it to the world. This comes with some risks because people (or bots, whatever…) will immediately start trying to log in and take control of your server. I was curious as to how many people would be trying to login and from where, so I wrote a simple and inelegant bash script to show me.&lt;/p&gt;
 
-&lt;p&gt;true&lt;script src=&quot;https://gist.github.com/c036fe136e42c2c3fdab5d4792d639c4.js&quot;&gt; &lt;/script&gt;&lt;/p&gt;
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/c036fe136e42c2c3fdab5d4792d639c4.js&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;In the mere 16 hours, I’ve had over 10,000 login attempts!&lt;/p&gt;
 
