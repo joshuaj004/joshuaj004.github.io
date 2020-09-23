@@ -11,4 +11,6 @@ Also: blog layout change. It turns out writing at least 1 blog post a day adds u
 
 Lastly, I ran some perf testing hitting the actual site. It's a bit slower and less powerful than running it locally which is kind of a funny thought because this isn't a super powerful computer. Of course, I could put this on a faster (read: more expensive) and it would probably blow my computer out of the water, but a $5-10/month machine is plenty for now.
 
+(First run is generating real sudoku boards and second is just fetching an already made one)
+
 ![](/../assets/2020-09-23-15-47-01.png)
