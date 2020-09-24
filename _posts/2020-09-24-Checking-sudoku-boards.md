@@ -2,7 +2,7 @@
 layout: post
 title:  "Checking Sudoku Boards"
 categories: sudoku
-date: 2020-09-23 15:34:00
+date: 2020-09-24 12:55:00
 ---
 
 The Age of Devops is over! Long live the Age of Development! Okay devops is never really over, but it's in a good position for now and I wanted to actually build something out. Before, you could fill out a board and not receive feedback on it so I decided this was a good thing to add. 
