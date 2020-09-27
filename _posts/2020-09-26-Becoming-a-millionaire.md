@@ -21,6 +21,7 @@ Everyone knows what the dictionary definition for a millionaire is, roughly, an 
 I don't think the first 3 are really a surprise to anyone and the math is pretty simple on the 4th method, but I want to chart out what you'd need to become a millionaire with SaaS (software as a Service or basically a subscription based model). 
 
 ## SaaS -> Millionaire
+
 | Price per Month | Number of Months | Number of Customers | Total | Effort for Each Sale | Comments |
 |-|-|-|-|-|-|
 | 1,000,000 | 1 | 1 | 1,000,000 | Astronomical | It really isn't unheard of to sell software for upwards of a million dollars, but my guess is you need to be a subject matter expert to build something useful and have the right connections to even discuss a sale.  Think of this as building something for a specific company either better than or before anything other company in the industry has it. |
