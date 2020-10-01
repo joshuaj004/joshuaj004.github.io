@@ -15,3 +15,5 @@ Below I'll list some of the stuff interesting to me:
 - I love learning languages, I have a pretty good grasp on English, taught myself German (then studied abroad to practice it), and I have a vague understanding of Spanish and French. I want to get better at Maltese, but I haven't made a concerted effort just yet (soon though!).
 - I've recently gotten better at cooking, I'll create a blog post about some of the resources I use!
 - I'm going to practice the guitar so that I can say, "Yeah I play guitar". I'll think of a better reason at some point...
+
+[Here's a link to my resume](/assets/Josh-Johnson-Resume.pdf)
