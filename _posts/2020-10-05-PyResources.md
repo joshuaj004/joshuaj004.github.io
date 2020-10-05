@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Python Resources"
+categories: celery awesome-python fullstackpython
+date: 2020-10-05 12:46:00
+---
+
+Initially this post was going to be about celery, because I realized that I haven't touched this part of the project yet, but I also didn't know anything about it. I started by reading [the docs](https://docs.celeryproject.org/en/stable/getting-started/introduction.html), which gave me a decent understanding of what it was, but I didn't really understand why it was useful. It's my understanding that a task queue is useful because you'd want to respond to incoming requests as quickly as possible, so if you're doing a task that might take a while (e.g. video encoding), you'd add that task to the queue and then respond with to the request with an acknowledgement to free up the worker process handling that request. I didn't have a solid grasp on it because it's just theory to me, so I read through [this article](https://www.fullstackpython.com/celery.html). Then I started poking around that website which led me to [this page about the best python resources](https://www.fullstackpython.com/best-python-resources.html) and from that page I wanted to highlight [Hacker News Tools of the Trade](https://github.com/cjbarber/ToolsOfTheTrade) and [Awesome Python](https://github.com/vinta/awesome-python). The tools of the trade lists out a lot of services that are offered so that you don't have to build a payment process/Log Monitor/whatever else yourself. Awesome Python lists out a bunch of libraries built in python that you can easily drop into your project. I'm gonna spend some time reading through these because they look quite interesting!
