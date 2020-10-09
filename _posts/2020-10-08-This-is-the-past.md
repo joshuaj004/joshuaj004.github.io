@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "This Post is the Past"
+title:  "This Post is in the Past"
 categories: git
 date: 2020-10-08 16:24:00
 ---
